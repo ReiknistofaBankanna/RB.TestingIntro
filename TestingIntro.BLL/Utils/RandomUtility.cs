@@ -99,9 +99,9 @@ namespace TestingIntro.BLL.Utils
         /// <summary>
         /// Sama fall og að neðan nema án tilvísunar.
         /// </summary>
-        /// <param name="x1"></param>
-        /// <param name="x2"></param>
-        /// <param name="precision"></param>
+        /// <param name="x1">Lægra mark tölu sem á að búa til.</param>
+        /// <param name="x2">Efra mark tölu sem á að búa til.</param>
+        /// <param name="precision">Fjöldi aukastafa.</param>
         /// <returns></returns>
         public static decimal RandomAmount(int x1, int x2, int precision = 0)
         {

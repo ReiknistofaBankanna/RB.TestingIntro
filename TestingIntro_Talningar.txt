@@ -1,0 +1,95 @@
+TRANSIENT,51 KALL,A1-A7                                           SCOPED,45 KÖLL,B1-B5                                            SINGLETON,40 KÖLL,C1-C3
+
+DefaultOperaton constructor: GetUniqueId() = OperationId = A1     DefaultOperaton constructor: GetUniqueId() = OperationId = B1   DefaultOperaton constructor: GetUniqueId() = OperationId = C1
+DefaultOperaton constructor: GetUniqueId() = OperationId = A2     DefaultOperaton constructor: GetUniqueId() = OperationId = B2   DefaultOperaton constructor: GetUniqueId() = OperationId = C2
+DefaultOperaton constructor: GetUniqueId() = OperationId = A3     DefaultOperaton constructor: GetUniqueId() = OperationId = B3   DefaultOperaton constructor: GetUniqueId() = OperationId = C3
+Scope 1-Call 1: ITransientOperation [ OperationId = A1 ]          Scope 1-Call 1: ITransientOperation [ OperationId = B1 ]        Scope 1-Call 1: ITransientOperation [ OperationId = C1 ]     
+Scope 1-Call 1: IScopedOperation    [ OperationId = A2 ]          Scope 1-Call 1: IScopedOperation    [ OperationId = B2 ]        Scope 1-Call 1: IScopedOperation    [ OperationId = C2 ]     
+Scope 1-Call 1: ISingletonOperation [ OperationId = A3 ]          Scope 1-Call 1: ISingletonOperation [ OperationId = B3 ]        Scope 1-Call 1: ISingletonOperation [ OperationId = C3 ]     
+...                                                               ...                                                             ...                                                          
+DefaultOperaton constructor: GetUniqueId() = OperationId = A4                                                                     
+Scope 1-Call 2: ITransientOperation [ OperationId = A4 ]          Scope 1-Call 2: ITransientOperation [ OperationId = B1 ]        Scope 1-Call 2: ITransientOperation [ OperationId = C1 ]     
+Scope 1-Call 2: IScopedOperation    [ OperationId = A2 ]          Scope 1-Call 2: IScopedOperation    [ OperationId = B2 ]        Scope 1-Call 2: IScopedOperation    [ OperationId = C2 ]     
+Scope 1-Call 2: ISingletonOperation [ OperationId = A3 ]          Scope 1-Call 2: ISingletonOperation [ OperationId = B3 ]        Scope 1-Call 2: ISingletonOperation [ OperationId = C3 ]     
+...                                                               ...                                                             ...                                                          
+DefaultOperaton constructor: GetUniqueId() = OperationId = A5     DefaultOperaton constructor: GetUniqueId() = OperationId = B4   
+DefaultOperaton constructor: GetUniqueId() = OperationId = A6     DefaultOperaton constructor: GetUniqueId() = OperationId = B5   
+Scope 2-Call 1: ITransientOperation [ OperationId = A5 ]          Scope 2-Call 1: ITransientOperation [ OperationId = B4 ]        Scope 2-Call 1: ITransientOperation [ OperationId = C1 ]     
+Scope 2-Call 1: IScopedOperation    [ OperationId = A6 ]          Scope 2-Call 1: IScopedOperation    [ OperationId = B5 ]        Scope 2-Call 1: IScopedOperation    [ OperationId = C2 ]     
+Scope 2-Call 1: ISingletonOperation [ OperationId = A3 ]          Scope 2-Call 1: ISingletonOperation [ OperationId = B3 ]        Scope 2-Call 1: ISingletonOperation [ OperationId = C3 ]     
+...                                                               ...                                                             ...                                                          
+DefaultOperaton constructor: GetUniqueId() = OperationId = A7                                                                     
+Scope 2-Call 2: ITransientOperation [ OperationId = A7 ]          Scope 2-Call 2: ITransientOperation [ OperationId = B4 ]        Scope 2-Call 2: ITransientOperation [ OperationId = C1 ]     
+Scope 2-Call 2: IScopedOperation    [ OperationId = A6 ]          Scope 2-Call 2: IScopedOperation    [ OperationId = B5 ]        Scope 2-Call 2: IScopedOperation    [ OperationId = C2 ]     
+Scope 2-Call 2: ISingletonOperation [ OperationId = A3 ]          Scope 2-Call 2: ISingletonOperation [ OperationId = B3 ]        Scope 2-Call 2: ISingletonOperation [ OperationId = C3 ]     
+
+TRANSIENT,51 KALL                                                 SCOPED,45 KÖLL                                                  SINGLETON,40 KÖLL
+                                                                                                                                  
+DefaultOperation.DefaultOperation                          7      DefaultOperation.DefaultOperation                          5    DefaultOperation.DefaultOperation                          3
+DefaultOperation.GetUniqueId                              19      DefaultOperation.GetUniqueId                              17    DefaultOperation.GetUniqueId                              15
+OperationService.OperationService                          4      OperationService.OperationService                          2    OperationService.OperationService                          1
+                                                          --                                                                --                                                              --
+                                                          30                                                                24                                                              19
+                                                                                                                                  
+DependencyInjectionExample.DependencyInjectionExample      1      DependencyInjectionExample.DependencyInjectionExample      1    DependencyInjectionExample.DependencyInjectionExample      1
+DependencyInjectionExample.DependencyInjectionExampleTest  1      DependencyInjectionExample.DependencyInjectionExampleTest  1    DependencyInjectionExample.DependencyInjectionExampleTest  1
+DependencyInjectionExample.ExemplifyScoping                2      DependencyInjectionExample.ExemplifyScoping                2    DependencyInjectionExample.ExemplifyScoping                2
+OperationService.LogOperation                             12      OperationService.LogOperation                             12    OperationService.LogOperation                             12
+OperationService.LogOperations                             4      OperationService.LogOperations                             4    OperationService.LogOperations                             4
+ServiceCollectionExtensionMethods.ConfigureOurServices     1      ServiceCollectionExtensionMethods.ConfigureOurServices     1    ServiceCollectionExtensionMethods.ConfigureOurServices     1
+                                                          --                                                                --                                                              --
+                                                          21                                                                21                                                              21
+
+
+TRANSIENT,51 KALL                                                 SCOPED,45 KÖLL                                                  SINGLETON,40 KÖLL
+DependencyInjectionExample.DependencyInjectionExample             DependencyInjectionExample.DependencyInjectionExample           DependencyInjectionExample.DependencyInjectionExample    
+DependencyInjectionExample.DependencyInjectionExampleTest         DependencyInjectionExample.DependencyInjectionExampleTest       DependencyInjectionExample.DependencyInjectionExampleTest
+ServiceCollectionExtensionMethods.ConfigureOurServices            ServiceCollectionExtensionMethods.ConfigureOurServices          ServiceCollectionExtensionMethods.ConfigureOurServices   
+DependencyInjectionExample.ExemplifyScoping                       DependencyInjectionExample.ExemplifyScoping                     DependencyInjectionExample.ExemplifyScoping              
+DefaultOperation.DefaultOperation                                 DefaultOperation.DefaultOperation                               DefaultOperation.DefaultOperation                        
+DefaultOperation.GetUniqueId                                      DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+DefaultOperation.DefaultOperation                                 DefaultOperation.DefaultOperation                               DefaultOperation.DefaultOperation                        
+DefaultOperation.GetUniqueId                                      DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+DefaultOperation.DefaultOperation                                 DefaultOperation.DefaultOperation                               DefaultOperation.DefaultOperation                        
+DefaultOperation.GetUniqueId                                      DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+OperationService.OperationService                                 OperationService.OperationService                               OperationService.OperationService                        
+OperationService.LogOperations                                    OperationService.LogOperations                                  OperationService.LogOperations                           
+OperationService.LogOperation                                     OperationService.LogOperation                                   OperationService.LogOperation                            
+DefaultOperation.GetUniqueId                                      DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+OperationService.LogOperation                                     OperationService.LogOperation                                   OperationService.LogOperation                            
+DefaultOperation.GetUniqueId                                      DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+OperationService.LogOperation                                     OperationService.LogOperation                                   OperationService.LogOperation                            
+DefaultOperation.GetUniqueId                                      DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+DefaultOperation.DefaultOperation                                 OperationService.LogOperations                                  OperationService.LogOperations                           
+DefaultOperation.GetUniqueId                                      OperationService.LogOperation                                   OperationService.LogOperation                            
+OperationService.OperationService                                 DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+OperationService.LogOperations                                    OperationService.LogOperation                                   OperationService.LogOperation                            
+OperationService.LogOperation                                     DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+DefaultOperation.GetUniqueId                                      OperationService.LogOperation                                   OperationService.LogOperation                            
+OperationService.LogOperation                                     DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+DefaultOperation.GetUniqueId                                      DependencyInjectionExample.ExemplifyScoping                     DependencyInjectionExample.ExemplifyScoping              
+OperationService.LogOperation                                     DefaultOperation.DefaultOperation                               OperationService.LogOperations                           
+DefaultOperation.GetUniqueId                                      DefaultOperation.GetUniqueId                                    OperationService.LogOperation                            
+DependencyInjectionExample.ExemplifyScoping                       DefaultOperation.DefaultOperation                               DefaultOperation.GetUniqueId                             
+DefaultOperation.DefaultOperation                                 DefaultOperation.GetUniqueId                                    OperationService.LogOperation                            
+DefaultOperation.GetUniqueId                                      OperationService.OperationService                               DefaultOperation.GetUniqueId                             
+DefaultOperation.DefaultOperation                                 OperationService.LogOperations                                  OperationService.LogOperation                            
+DefaultOperation.GetUniqueId                                      OperationService.LogOperation                                   DefaultOperation.GetUniqueId                             
+OperationService.OperationService                                 DefaultOperation.GetUniqueId                                    OperationService.LogOperations                           
+OperationService.LogOperations                                    OperationService.LogOperation                                   OperationService.LogOperation                            
+OperationService.LogOperation                                     DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+DefaultOperation.GetUniqueId                                      OperationService.LogOperation                                   OperationService.LogOperation                            
+OperationService.LogOperation                                     DefaultOperation.GetUniqueId                                    DefaultOperation.GetUniqueId                             
+DefaultOperation.GetUniqueId                                      OperationService.LogOperations                                  OperationService.LogOperation                            
+OperationService.LogOperation                                     OperationService.LogOperation                                   DefaultOperation.GetUniqueId                             
+DefaultOperation.GetUniqueId                                      DefaultOperation.GetUniqueId                             
+DefaultOperation.DefaultOperation                                 OperationService.LogOperation                            
+DefaultOperation.GetUniqueId                                      DefaultOperation.GetUniqueId                             
+OperationService.OperationService                                 OperationService.LogOperation                            
+OperationService.LogOperations                                    DefaultOperation.GetUniqueId                             
+OperationService.LogOperation
+DefaultOperation.GetUniqueId
+OperationService.LogOperation
+DefaultOperation.GetUniqueId
+OperationService.LogOperation
+DefaultOperation.GetUniqueId
