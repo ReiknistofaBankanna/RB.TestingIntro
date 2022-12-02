@@ -114,8 +114,8 @@ namespace TestingIntro.Tests.UnitTests.DependencyInjectionExamples
 
         public string GetUniqueId()
         {
-            return $"OperationId = {_guid}";
-            // return $"OperationId = {_guid}, DateTime.Now.Ticks = {DateTime.Now.Ticks}";
+            // return $"OperationId = {_guid}";
+            return $"OperationId = {_guid}, DateTime.Now.Ticks = {DateTime.Now.Ticks}";
         }
     }
 
