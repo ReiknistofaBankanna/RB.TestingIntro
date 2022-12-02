@@ -1,2 +1,3 @@
 # RB.TestingIntro
-Dæmi um orófanir með XUNIT
+Dæmi um prófanir með XUNIT.
+Sýnishorn á nokkrum einföldum prófum.
